@@ -1,33 +1,25 @@
-const fName = document.querySelector("form #fName");
-const age = document.querySelector("form #age");
-const isMarried = document.querySelector("form #isMarried");
 
-const fNameText = document.querySelector(".fName");
-const ageText = document.querySelector(".age");
-const isMarriedText = document.querySelector(".isMarried");
+const todoList = document.querySelector(".todo-list");
+const todoNr = document.querySelector(".todo-nr");
+const btn = document.querySelector("#submit");
+const items = todoList.children;
+console.log(items)
 
-const btnSubmit = document.querySelector(".btnSubmit");
-const btnReset = document.querySelector(".btnReset");
 
-const message = document.querySelector(".message");
+btn.addEventListener("click", addItem);
 
-const containerText = document.querySelector(".container__text");
+function addItem() {
+    const newItem = document.createElement("li");
+    newItem.classList.add("item");
+    newItem.innerText = `Item ${items.length +1}`;
+    todoList.append(newItem);
 
-fName.addEventListener("input", function(e) {
-    fNameText.innerHTML = `Name: ${e.target.value}`;
-});
-age.addEventListener("input", function(e) {
-    ageText.innerHTML = `Age: ${e.target.value}`;
-});
-isMarried.addEventListener("input", function(e) {
-    isMarriedText.innerHTML = `IsMarried: ${e.target.value}`;
-});
+    newItem.addEventListener("click", deleteItem);
 
-btnSubmit.addEventListener("click", function() {
-    message.innerHTML = "Successful send!"
-});
-btnReset.addEventListener("click", function() {
-    containerText.innerHTML = "";
-    message.innerHTML = "Unsuccessful, try again!"
-});
+}
 
+
+function deleteItem(e) {
+    const eachItem = e.target;
+    eachItem.remove();
+}
