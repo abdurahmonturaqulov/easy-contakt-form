@@ -1,28 +1,79 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
+    box-sizing: inherit;
 
+}
 
 body {
-    font-family: sans-serif;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    margin-top: 40px;
 }
 
-#btn1 {
-    background-color: #909090;
+.container {
+    width: 400px;
+    margin: 20px auto;
+}
+
+.container__area form input {
     border: none;
-    padding: 10px;
-    margin: 20px;
-    border-radius: 6px;
+    border-bottom: 1px solid #909090;
+    outline: none;
+    font-size: 18px;
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    margin-top: 20px;
+}
+
+.btns {
+    margin: 30px 0;
+
+}
+
+.btn {
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: green;
     color: #fff;
-}
-
-#btn:hover {
     cursor: pointer;
-    background-color: #7f5e5e;
-}
-#btn:focus {
-    box-shadow: 0px 10px 10px rgba(red, green, blue, alpha);
+    border: none;
+    font-size: 16px;
+
 }
 
+
+.btns .btnSubmit {
+    background-color: darkgreen;
+}
+
+.btns .btnReset {
+    background-color: darkred;
+}
+
+.container__text {
+    width: 100%;
+    border: 1px solid #909090;
+    border-top: none;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.container__text p {
+    font-size: 28px;
+    margin-top: 25px;
+    font-family: monospace;
+}
+
+
+.message {
+    animation-name: anim;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes anim {
+    50% {
+        transform: translate(300px);
+    }
+}
