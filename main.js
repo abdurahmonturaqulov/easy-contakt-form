@@ -3,10 +3,13 @@ const todoList = document.querySelector(".todo-list");
 const todoNr = document.querySelector(".todo-nr");
 const btn = document.querySelector("#submit");
 const items = todoList.children;
-console.log(items)
 
 
 btn.addEventListener("click", addItem);
+
+todoList.addEventListener("click", function () {
+    console.log("todoList");
+});
 
 function addItem() {
     const newItem = document.createElement("li");
@@ -20,6 +23,7 @@ function addItem() {
 
 
 function deleteItem(e) {
+    e.stopPropagation();
     const eachItem = e.target;
     eachItem.remove();
 }
